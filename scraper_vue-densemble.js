@@ -9,7 +9,7 @@ function scrapeOneDay() {
 
     // get data
     let cases = document.querySelector('.jsx-2793952281.value')?.firstChild.textContent.replace(/\s+/g, ',');
-    let deaths = (dateObj > new Date("2020-03-31") && dateObj < new Date('2021-04-01')) ? document.querySelector('.jsx-2376875320.value')?.firstChild.textContent.replace(/\s+/g, ',') : null;
+    let deaths = (dateObj > new Date("2020-03-31")) ? document.querySelector('.jsx-2376875320.value')?.firstChild.textContent.replace(/\s+/g, ',') : null;
     let hospi = document.querySelector('.jsx-792689997.value')?.firstChild.textContent.replace(/\s+/g, ',');
     let hospiNew = document.querySelectorAll('.jsx-792689997.value')[1]?.firstChild.textContent.replace(/\s+/g, ',');
     let icu = document.querySelector('.jsx-659902412.value')?.firstChild.textContent.replace(/\s+/g, ',');
@@ -17,7 +17,7 @@ function scrapeOneDay() {
     let returnHome = (dateObj > new Date("2020-12-26"))
       ? document.querySelectorAll('.jsx-850173864.value')[1]?.firstChild.textContent.replace(/\s+/g, ',')
       : document.querySelector('.jsx-850173864.value')?.firstChild.textContent.replace(/\s+/g, ',');
-    let deathsHospi = (dateObj > new Date("2020-03-31") && dateObj < new Date('2021-04-01'))
+    let deathsHospi = (dateObj > new Date("2020-03-31"))
       ? document.querySelectorAll('.jsx-2376875320.value')[1]?.firstChild.textContent.replace(/\s+/g, ',')
       : document.querySelector('.jsx-2376875320.value')?.firstChild.textContent.replace(/\s+/g, ',');
     let casesEhpadEms = document.querySelector('.jsx-3358528734.value')?.firstChild.textContent.replace(/\s+/g, ',');
